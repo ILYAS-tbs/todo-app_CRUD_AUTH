@@ -1,0 +1,38 @@
+{% extends 'registration/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{%  block page-title  %}
+<div class=" title  tw-text-center tw-text-4xl tw-mt-10"> R E G I S T E R</div>
+<div class=" title  tw-text-center tw-text-xl tw-m-3">  </div>
+{% endblock %}
+
+
+{% block content %}
+<!-- *to dos : content wrapper   -->
+     <div class="form-container tw-flex tw-justify-center"> 
+        <form method="POST" action="{% url 'register_url' %}" class="tw-flex tw-flex-col ">
+           
+            {% csrf_token %}
+            {{form|crispy}}
+          
+          
+            <div class="button-container tw-flex tw-justify-between tw-items-center">
+                <div class="filler tw-opacity-0"> hello</div>
+                <div class="new-user-text tw-flex tw-flex-col tw-items-center tw-mt-2"> 
+                     <div class="new-user-text"> 
+                        ALREADY A USER ?
+                     </div>
+                     <a href="{% url 'login' %} " class="new-user-text " > 
+                       <div class="text tw-text-sky-500 tw-underline hover:tw-text-sky-400 ">login </div>
+                     </a>
+                </div>
+             
+                <button type="submit" class="btn btn-dark  ">Submit</button>
+            </div>
+        </form>
+
+
+     </div>
+{% endblock %}

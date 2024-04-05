@@ -1,0 +1,70 @@
+{% extends 'todo/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+ 
+ {%  block page-title  %}
+ <div class=" title  tw-text-center tw-text-4xl tw-m-3 "> New Todo</div>
+ {% endblock %}
+ 
+ {% block content %}
+<!-- *to dos : content wrapper  -->
+<div class="tw-grid tw-grid-cols-6 tw-h-screen tw-mt-4"> 
+   
+   <div class="column1  "></div>
+    <!-- * todos container -->
+   <div class="column2  todos tw-border-0 tw-border-sky-500 tw-col-span-4"> 
+         
+         <!-- * new todo button  -->
+
+         <!-- <div class="add-todo tw-flex tw-justify-end tw-border-0">
+              
+                    <a href="#" class="button tw-flex tw-items-center tw-no-underline tw-underline-offset-0 tw-text-gray-700">
+                       <svg class=" tw-inline-block tw-ml-2 tw-size-8" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                           <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                         </svg>
+                    </a>
+              
+         </div> -->
+        
+        <!-- *todo  -->
+        <form method="POST" action="#" class="tw-h-full">
+             <!-- * csrf -->
+             {% csrf_token %}
+        <div class="todo tw-flex tw-justify-center tw-p-2 tw-my-2 tw-ml-0 tw-border-2 tw-rounded-lg tw-min-h-36 tw-h-5/6"> 
+             <!-- * todo : iteself title and body -->
+             <div class="  tw-basis-11/12  tw-flex tw-flex-col tw-justify-evenly "> 
+             
+
+              {{form|crispy}}
+              
+               <!-- todo : create and cancel icons -->
+              <div class="delete tw-flex tw-flex-col sm:tw-flex-row  tw-w-full tw-justify-center sm:tw-justify-end tw-items-center "> 
+                <div class="div"> <button type="submit" class="btn btn-dark tw-inline-block">Create</button></div>
+                <br>
+               <a href="{% url 'get-todos_url' %}">
+                  <button  type="button" class="btn btn-outline-danger tw-inline-block  sm:tw-ml-2">Cancel</button>
+
+              </a>
+
+            </div>
+             </div>
+            
+   
+                              
+                 
+        </div>
+    </form>    
+        <!-- *todo : end of one todo -->
+
+      
+   </div>
+  
+  
+  
+   <div class="column3 "></div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'todo/base.html' %}
+
+<!-- {% load static %} -->
+
+
+      {%  block page-title  %}
+      <!-- <div class=" title  tw-text-4xl tw-m-3 "> TODO : {{todo}} </div> -->
+    
+ <!-- todo : arror to get back to the previous page -->
+   <a href="{% url 'get-todos_url' %}">
+    <div class="container tw-m-0 tw-mt-4 tw-cursor-pointer"   > 
+ 
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+      </svg>
+  </div>
+   </a>
+
+      
+      <!-- <div class=" title  tw-text-center tw-text-4xl tw-m-3 "> owner : {{todo.owner}} </div> -->
+
+      {% endblock %}
+      
+      {% block content %}
+    <!-- *to dos : content wrapper  -->
+    <div class="tw-grid  todos   tw-mt-10 tw-grid-cols-6 tw-h-80 tw-mt-4"> 
+        
+        <div class="column1  ">
+     
+
+
+        </div>
+         <!-- * todos container -->
+        <div class="column2  tw-border-0 tw-border-sky-500 tw-col-span-4 "> 
+              
+              <!-- * new todo button  -->
+
+              <div class="add-todo tw-flex tw-justify-end tw-border-0 ">
+                   
+                      
+                   
+              </div>
+             
+             <!-- *todo  -->
+             <div class="todo tw-flex tw-justify-between tw-p-2   tw-border-2 tw-rounded-lg tw-min-h-36 tw-mb-4"> 
+                  <!-- * todo : iteself title and body -->
+                  <div class="div   tw-basis-11/12  tw-flex tw-flex-col tw-justify-between"> 
+                    <div class="title tw-text-2xl  tw-text-center"> 
+                        <svg class="tw-inline-block" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-diamond-fill" viewBox="0 0 16 16">
+                            <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.614L8 8.708l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.614-.706L7.292 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098z"/>
+                          </svg>
+                      {{todo.title}}  </div>
+                    <div class="todo-body">
+                        <svg class="tw-inline-block" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                            </svg>
+                        {{todo.body}} </div> 
+                    <div class="todo-body tw-self-start"> {{todo.updated}} </div> 
+                  </div>
+                 
+                 <!-- * update tand delete icons -->
+                 
+             </div>
+                
+             <!-- *todo : end of one todo -->
+
+     
+        </div>
+        <div class="column3 "></div>
+    </div>
+ 
+
+                       
+    {% endblock %}
+

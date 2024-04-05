@@ -1,0 +1,61 @@
+{% extends 'todo/create-todo.html' %}
+
+{% load crispy_forms_tags %}
+
+{%  block page-title  %}
+<div class=" title  tw-text-center tw-text-4xl tw-m-3 "> Update Todo</div>
+{% endblock %}
+
+
+
+{% block content %}
+<!-- *to dos : content wrapper  -->
+<div class="tw-grid tw-grid-cols-6 tw-h-screen tw-mt-4"> 
+   
+   <div class="column1  "></div>
+    <!-- * todos container -->
+   <div class="column2 tw-flex  tw-justify-center  todos tw-border-0 tw-border-sky-500 tw-col-span-4"> 
+         
+         <!-- * new todo button  -->
+
+            
+        <!-- *todo form -->
+        <form method="POST" action="#" class="tw-h-full">
+             <!-- * csrf -->
+             {% csrf_token %}
+            <div class="todo tw-flex tw-justify-between tw-p-2 tw-my-2  tw-border-2 tw-rounded-lg tw-min-h-36 tw-h-5/6"> 
+             <!-- * todo : iteself title and body -->
+             <div class="  tw-basis-11/12  tw-flex tw-flex-col tw-justify-evenly tw-items-center"> 
+             
+
+              {{form|crispy}}
+             </div>
+            
+            <!-- * update tand delete icons -->
+               <div class="buttons-container tw-flex tw-flex-col tw-justify-end tw-mx-2"> 
+                 <div class="tw-flex"> 
+                    <button type="submit" class="btn btn-dark  tw-mr-2">update</button>
+                    
+                    <a href="{% url 'get-todos_url' %}">
+                        <button  type="button" class="btn btn-outline-danger">Cancel</button>
+
+                    </a>
+
+                 </div>
+                </div>
+               
+                   
+                 
+        </div>
+    </form>    
+        <!-- *todo : end of one todo -->
+
+      
+   </div>
+  
+  
+  
+   <div class="column3 "></div>
+</div>
+
+{% endblock %}
