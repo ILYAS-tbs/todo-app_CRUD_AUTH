@@ -1,4 +1,4 @@
-## simple to do app - full CRUD
+# simple to do app - full CRUD
 
 ##  & authentication : Resigter , login && authorization for resources(permissions required)
 
