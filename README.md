@@ -58,7 +58,7 @@ npx tailwindcss -i ./backend/todo/static/css_input/input.css -o ./backend/todo/s
 
 ### links - webpages in this app are : 
 
-## all are : localhost:8000/ ... ( or ur domain name with the port the app is in )
+# all are : localhost:8000/ ... ( or ur domain name with the port the app is in )
   - if you are using nginx configure ur reverse-proxy to port 8000 
   - or run the server with this command instead ( ex : i want port 8080)
   -  ``` bash 
