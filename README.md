@@ -63,7 +63,7 @@ npx tailwindcss -i ./backend/todo/static/css_input/input.css -o ./backend/todo/s
   - or run the server with this command instead ( ex : i want port 8080)
   -  ``` bash 
        python manage.py runserver 0.0.0.0:8080
-    ``` 
+     
 
  - todo/ auth/ login/ [name='login']
  - todo/ auth/ logout/ [name='logout']
